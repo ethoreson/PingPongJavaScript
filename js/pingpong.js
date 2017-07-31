@@ -17,20 +17,20 @@ Calculator.prototype.pingPong = function(goal) {
   }
   return output;
 };
-
-Calculator.prototype.operation = function(xx, sign, yy) {
-  var x = parseInt(xx);
-  var y parseInt(yy);
-  if (sign === "+") {
-    return (x + y);
-  } else if (sign === "-") {
-    return (x - y);
-  } else if (sign === "*") {
-    return (x * y);
-  } else {
-    return (x / y);
-  }
-}
+// 
+// Calculator.prototype.operation = function(xx, sign, yy) {
+//   var x = parseInt(xx);
+//   var y parseInt(yy);
+//   if (sign === "+") {
+//     return (x + y);
+//   } else if (sign === "-") {
+//     return (x - y);
+//   } else if (sign === "*") {
+//     return (x * y);
+//   } else {
+//     return (x / y);
+//   }
+// }
 
 
 exports.calculatorModule = Calculator;

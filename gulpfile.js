@@ -12,12 +12,12 @@ gulp.task('myTask', function(){
   console.log('hello gulp');
 });
 
-gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/pingpong-interface.js'] })
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./build/js'));
-});
+// gulp.task('jsBrowserify', function() {
+//   return browserify({ entries: ['./js/pingpong-interface.js'] })
+//     .bundle()
+//     .pipe(source('app.js'))
+//     .pipe(gulp.dest('./build/js'));
+// });
 
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
@@ -46,13 +46,13 @@ gulp.task("build", ['clean'], function(){
   }
 });
 
-gulp.task("build", function(){
-  if (buildProduction) {
-    gulp.start('minifyScripts');
-  } else {
-    gulp.start('jsBrowserify');
-  }
-});
+// gulp.task("build", function(){
+//   if (buildProduction) {
+//     gulp.start('minifyScripts');
+//   } else {
+//     gulp.start('jsBrowserify');
+//   }
+// });
 
 gulp.task("clean", function(){
   return del(['build', 'tmp']);

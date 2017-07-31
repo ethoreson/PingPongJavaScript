@@ -10,6 +10,16 @@ $(document).ready(function() {
       $('#solution').append("<li>" + element + "</li>");
     });
   });
+
+  $('#math-operation').submit(function(event) {
+    event.preventDefault();
+    var x = $('#x').val();
+    var sign = $('#sign').val();
+    var y = $('#y').val();
+    var simpleCalculator = new Calculator("hot pink");
+    var output = simpleCalculator.pingPong(x, sign, y);
+      $('#calculatorSolution').append(output);
+  })
 });
 
 $(document).ready(function(){

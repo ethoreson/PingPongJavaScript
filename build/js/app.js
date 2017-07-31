@@ -18,6 +18,21 @@ Calculator.prototype.pingPong = function(goal) {
   }
   return output;
 };
+// 
+// Calculator.prototype.operation = function(xx, sign, yy) {
+//   var x = parseInt(xx);
+//   var y parseInt(yy);
+//   if (sign === "+") {
+//     return (x + y);
+//   } else if (sign === "-") {
+//     return (x - y);
+//   } else if (sign === "*") {
+//     return (x * y);
+//   } else {
+//     return (x / y);
+//   }
+// }
+
 
 exports.calculatorModule = Calculator;
 
@@ -34,6 +49,16 @@ $(document).ready(function() {
       $('#solution').append("<li>" + element + "</li>");
     });
   });
+
+  $('#math-operation').submit(function(event) {
+    event.preventDefault();
+    var x = $('#x').val();
+    var sign = $('#sign').val();
+    var y = $('#y').val();
+    var simpleCalculator = new Calculator("hot pink");
+    var output = simpleCalculator.pingPong(x, sign, y);
+      $('#calculatorSolution').append(output);
+  })
 });
 
 $(document).ready(function(){
